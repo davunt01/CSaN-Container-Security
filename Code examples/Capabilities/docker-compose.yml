@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  friendly-container:
+    image: "alpine:3.4"
+    command: ["/bin/echo", "hello", "world"]
+    cap_add:
+      - SYS_NICE
+    cap_drop:
+      - KILL
