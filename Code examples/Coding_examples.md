@@ -6,6 +6,7 @@ In this document, we will briefly showcase the features that enable the isolatio
 * [Linux Namespaces](#Linux-Namespaces)
 * [Capabilities](#Capabilities)
 * [Control Groups (Cgroups)](#Control-Groups-(Cgroups))
+* [Seccomp](#Seccomp)
 
 ## Linux Namespaces
 
@@ -152,3 +153,12 @@ make && make run
 
 
 ## Seccomp
+
+Run docker with a custom seccomp profile, then unconfined:
+
+```bash
+./run.sh
+```
+
+The profile is defined in `profile.json` and allows every syscall except `mkdir`.
+Even though the user is root, we can't execute the `mkdir` command.
