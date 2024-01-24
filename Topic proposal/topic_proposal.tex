@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+
+\begin{document}
+
+\title{
+Computer Systems and Networks \\ 23W \
+         \\ ------------ \\ Topic Proposal: \\ Security in Container Environments \\
+}
+\date{2023-11-04}
+\author{\\Group Work}
+\maketitle{}
+\bigskip
+
+\renewcommand{\baselinestretch}{0.7}\normalsize
+\tableofcontents{}
+\renewcommand{\baselinestretch}{1.0}\normalsize
+
+\newpage
+
+
+%--------------------------------------------------------------------
+
+
+\section{Team Members}
+David Unterholzner (Mat. Nr.: 12009492, d.unterholzner@student.tugraz.at)\\
+Jakob Hofer (Mat. Nr.: 12030367, jakob.hofer@student.tugraz.at)\\
+Jakob Khom (Mat. Nr.: 12025213, jakob.khom@student.tugraz.at)\\
+Leo Lach (Mat. Nr: 12014257, leo.lach@student.tugraz.at)\\
+
+\bigskip
+\section{Topic Description}
+In our presentation, we will talk about Security in Container Environments. 
+To give the audience a complete overview of the concept of containerization and 
+the Security aspects behind it, we decided on the following topics that we will discuss:
+
+\begin{enumerate}
+    \item \textbf{Understanding Containers:}
+    What is a container, and how do they differ from traditional virtual machines?
+
+    \item \textbf{Container vs VM: Different Use Cases and Engines:}
+    Explore the distinctive use cases for containers and virtual machines. 
+    Talk about the most popular Container Engine (Docker).
+
+    \item \textbf{Achieving Isolation in Containers:}
+    Explain the mechanisms behind container isolation, including Linux namespaces, 
+    capabilities, and control groups (cgroups).
+
+    \item \textbf{Runtime and Network Security:}
+    Talk about runtime protection and network security within container environments.
+
+    \item \textbf{Best Practices for Building Container Images:}
+    Talk about the best practices for constructing secure container images, 
+    ensuring a solid foundation for deployment.
+
+    \item \textbf{Learning from Past Exploits:}
+    Analyze real-world security exploits related to containers, 
+    providing insights into preventive measures and lessons learned.
+
+    \item \textbf{Programming Example:}
+    Illustrate security principles through a practical programming example and showcase how 
+    a container is isolated from the rest of the System.
+\end{enumerate}
+
+\bigskip
+\section{Description and plan for the code example}
+
+\begin{enumerate}
+\item \textbf{Filesystem restrictions:} Examples of using binds/volumes to share data between container and host, 
+using/escaping from chroot.
+\item \textbf{Resource limitation:} Show that programs running in a container can't use up all host memory/cpus.
+The code will contain a C program with a memory leak and a python program with ReDOS.
+\item \textbf{Syscall limitation:} A C program that runs syscalls that are blocked by default (e.g. reboot, ptrace), 
+and an exploit for breaking out of a misconfigured container (unconfined seccomp).
+\item \textbf{Container Image Integrity Check:} A C program that creates a hash of a container image and 
+compares that hash to a well-known hash of the image to ensure the image hasn't been tampered with.
+\end{enumerate}
+
+\end{document}
